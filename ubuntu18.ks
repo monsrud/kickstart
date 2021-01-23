@@ -1,4 +1,4 @@
-#platform=AMD64 or Intel EM64T
+# bare bones kickstart template for ubuntu18
 
 lang en_US
 langsupport en_US
