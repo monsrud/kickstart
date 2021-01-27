@@ -7,3 +7,5 @@ To create a repo for Ubuntu, you need to use the apt-mirror command to make a mi
 it is easier to do on Ubuntu.  Create the mirror in the document root of your web server. In order to kickstart Ubuntu, you need to download 
 the netboot installer and boot using it.  At the install dialog, press tab and edit the boot line.
 
+
+![Kickstart Via Ubuntu Boot Prompt](images/ubuntu_kickstart.png?raw=true "Kickstart Via Ubuntu Boot Prompt")
