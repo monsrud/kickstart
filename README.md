@@ -1,6 +1,6 @@
 # Kickstart Examples
 
-These are some example kickstart files for RHEL/Centos and Ubuntu.
+These are some example kickstart files for RHEL/Centos and Ubuntu. These are used for unattended installations via http using a local repository.
 
 To create a repo for RHEL/Centos, just copy the install DVD to and put it in rhel_repo or centos_repo in the document root of your web server.  
 Edit the url in the kickstart file to point to the dirctory you've created. Note that the boot parameter is **inst.ks=...**
