@@ -1,4 +1,4 @@
-# Bare bones kickstart template for centos 7 
+# Kickstart template for foreman on centos 7 
 
 #graphical
 text
@@ -37,7 +37,7 @@ partition / --size=20000 --ondrive=/dev/sda --grow --fstype=ext4
 # System timezone
 timezone America/Chicago --isUtc
 
-# Root password
+# Root password is initially set to "password"
 rootpw --iscrypted $6$CPrYkBxB6w2w2SuK$bXuVMVosixstCRpZ7cOmOukwaA3df7TdacCL.CAL.J.imQEDV.aJudFdoZGCysgLvnKmk7EJl3LDHg7V5Vevn.
 
 %addon com_redhat_kdump --enable --reserve-mb='auto'
@@ -52,7 +52,7 @@ pwpolicy luks --minlen=6 --minquality=1 --notstrict --nochanges --notempty
 
 %post
 sed -i 's/#PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config
-# yum install via http is broken...
+# ansible yum install via http is broken, using yum command instead ...
 yum -y install https://yum.puppet.com/puppet6-release-el-7.noarch.rpm
 yum -y install https://yum.theforeman.org/releases/1.24/el7/x86_64/foreman-release.rpm
 yum -y install foreman-installer
