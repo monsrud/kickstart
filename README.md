@@ -1,4 +1,4 @@
-=Kickstart
+#Kickstart Examples
 
 These are some example kickstart files for RHEL/Centos and Ubuntu.
 
