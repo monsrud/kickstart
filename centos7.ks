@@ -10,11 +10,6 @@ url --url http://10.10.10.118/centos7_repo
 
 %packages
 @^minimal
-@core
-chrony
-kexec-tools
-python3
-
 %end
 
 # Keyboard layouts
@@ -37,7 +32,7 @@ partition / --size=20000 --ondrive=/dev/sda --grow --fstype=ext4
 # System timezone
 timezone America/Chicago --isUtc
 
-# Root password
+# Root password is intially set to "password"
 rootpw --iscrypted $6$CPrYkBxB6w2w2SuK$bXuVMVosixstCRpZ7cOmOukwaA3df7TdacCL.CAL.J.imQEDV.aJudFdoZGCysgLvnKmk7EJl3LDHg7V5Vevn.
 
 %addon com_redhat_kdump --enable --reserve-mb='auto'
