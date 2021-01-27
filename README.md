@@ -1,4 +1,6 @@
+=Kickstart
 
+These are some example kickstart files for RHEL/Centos and Ubuntu.
 
 To create a repo for RHEL/Centos, just copy the install DVD to and put it in rhel_repo or centos_repo in the document root of your web server.  
 Edit the url in the kickstart file to point to the dirctory you've created.
