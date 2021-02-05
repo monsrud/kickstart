@@ -47,4 +47,8 @@ pwpolicy luks --minlen=6 --minquality=1 --notstrict --nochanges --notempty
 
 %post
 sed -i 's/#PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config
+yum update -y
+yum upgrade -y
+yum install -y epel-release
+systemctl disable firewalld
 %end
