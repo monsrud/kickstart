@@ -47,9 +47,22 @@ pwpolicy luks --minlen=6 --minquality=1 --notstrict --nochanges --notempty
 %post
 sed -i 's/#PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+
 yum update -y
 yum upgrade -y
 yum install -y epel-release
-systemctl disable firealld
+
+systemctl disable firewalld
+
+cat << EOF > /etc/sysctl.d/30-disable-ipv6.conf
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.all.autoconf = 0
+net.ipv6.conf.default.autoconf = 0
+net.ipv6.conf.lo.autoconf = 0
+EOF
+
+
+
 %end
 

@@ -29,8 +29,24 @@ skipx
 
 %packages
 @ openssh-server
+software-properties-common
+open-vm-tools
 
 %post
-apt update
-apt upgrade
+apt update -y
+apt upgrade -y
+
 sed -i 's/#PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config
+
+systemctl disable ufw
+
+apt-add-repository --yes --update ppa:ansible/ansible
+apt install -y  ansible 
+
+cat << EOF > /etc/sysctl.d/30-disable-ipv6.conf
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.all.autoconf = 0
+net.ipv6.conf.default.autoconf = 0
+net.ipv6.conf.lo.autoconf = 0
+EOF
