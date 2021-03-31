@@ -2,7 +2,7 @@
 
 text
 
-url --url http://10.10.10.118/centos8_repo/BaseOS
+url --url http://10.10.10.118/repos/centos8_repo/BaseOS
 
 %packages
 @^minimal-environment
